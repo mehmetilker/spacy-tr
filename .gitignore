@@ -6,6 +6,11 @@ __pycache__/
 # C extensions
 *.so
 
+#training generated models
+models
+imst-json
+imst-json-m
+
 # Distribution / packaging
 .Python
 build/
@@ -104,6 +109,7 @@ celerybeat.pid
 # Environments
 .env
 .venv
+_env
 env/
 venv/
 ENV/

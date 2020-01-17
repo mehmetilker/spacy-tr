@@ -1,0 +1,79 @@
+=========================== Data format validation ===========================
+✔ Corpus is loadable
+
+=============================== Training stats ===============================
+Training pipeline: tagger, parser, ner
+Starting with blank model 'tr'
+3664 training docs
+988 evaluation docs
+⚠ 7 training examples also in evaluation data
+
+============================== Vocab & Vectors ==============================
+ℹ 37784 total words in the data (13766 unique)
+ℹ No word vectors present in the model
+
+========================== Named Entity Recognition ==========================
+ℹ 0 new labels, 0 existing labels
+37784 missing values (tokens with '-' label)
+✔ Good amount of examples for all labels
+✔ Examples without occurrences available for all labels
+✔ No entities consisting of or starting/ending with whitespace
+
+=========================== Part-of-speech Tagging ===========================
+ℹ 33 labels in data (19 labels in tag map)
+✘ Label 'Det' not found in tag map for language 'tr'
+✘ Label 'Noun' not found in tag map for language 'tr'
+✘ Label 'NAdj' not found in tag map for language 'tr'
+✘ Label 'Punc' not found in tag map for language 'tr'
+✘ Label 'Adj' not found in tag map for language 'tr'
+✘ Label 'Conj' not found in tag map for language 'tr'
+✘ Label 'PCNom' not found in tag map for language 'tr'
+✘ Label 'With' not found in tag map for language 'tr'
+✘ Label 'Adverb' not found in tag map for language 'tr'
+✘ Label 'Verb' not found in tag map for language 'tr'
+✘ Label 'Ques' not found in tag map for language 'tr'
+✘ Label 'PCAbl' not found in tag map for language 'tr'
+✘ Label 'Prop' not found in tag map for language 'tr'
+✘ Label 'Neg' not found in tag map for language 'tr'
+✘ Label 'ANum' not found in tag map for language 'tr'
+✘ Label 'Quant' not found in tag map for language 'tr'
+✘ Label 'PCDat' not found in tag map for language 'tr'
+✘ Label 'Pers' not found in tag map for language 'tr'
+✘ Label 'Zero' not found in tag map for language 'tr'
+✘ Label 'NNum' not found in tag map for language 'tr'
+✘ Label 'Interj' not found in tag map for language 'tr'
+✘ Label 'Demons' not found in tag map for language 'tr'
+✘ Label 'Reflex' not found in tag map for language 'tr'
+✘ Label 'Without' not found in tag map for language 'tr'
+✘ Label 'Rel' not found in tag map for language 'tr'
+✘ Label 'Dup' not found in tag map for language 'tr'
+✘ Label 'Abr' not found in tag map for language 'tr'
+✘ Label 'Postp' not found in tag map for language 'tr'
+✘ Label 'Ness' not found in tag map for language 'tr'
+✘ Label 'PCIns' not found in tag map for language 'tr'
+✘ Label 'Since' not found in tag map for language 'tr'
+✘ Label 'PCAcc' not found in tag map for language 'tr'
+✘ Label 'PCGen' not found in tag map for language 'tr'
+
+============================= Dependency Parsing =============================
+ℹ Found 3664 sentences with an average length of 10.3 words.
+⚠ The training data contains 1.01 sentences per document. When there are very
+few documents containing more than one sentence, the parser will not learn how
+to segment longer texts into sentences.
+ℹ Found 405 nonprojective train sentences
+ℹ Found 119 nonprojective dev sentences
+ℹ 32 labels in train data
+ℹ 209 labels in projectivized train data
+⚠ Low number of examples for label 'advcl' (4)
+⚠ Low number of examples for label 'parataxis' (10)
+⚠ Low number of examples for label 'csubj' (8)
+⚠ Low number of examples for label 'dep' (1)
+⚠ Low number of examples for label 'vocative' (2)
+⚠ Low number of examples for 174 labels in the projectivized dependency trees
+used for training. You may want to projectivize labels such as punct before
+training in order to improve parser performance.
+
+================================== Summary ==================================
+✔ 4 checks passed
+⚠ 10 warnings
+✘ 33 errors

@@ -1,4 +1,5 @@
-Bu şekilde collnu dosylarını spacy json a convert edince: (--morphology parametresi ile)
+Using convert parameter with --morphology
+
 py -m spacy convert UD_Turkish-IMST/tr_imst-ud-dev.conllu imst-json-m --morphology
 
 Data format validation

@@ -48,8 +48,12 @@ https://github.com/explosion/spaCy/issues/3056#issuecomment-470068902
 
 git clone https://github.com/UniversalDependencies/UD_Turkish-IMST
 mkdir imst-json
+
+### Convert
+
 py -m spacy convert UD_Turkish-IMST/tr_imst-ud-train.conllu imst-json
 py -m spacy convert UD_Turkish-IMST/tr_imst-ud-dev.conllu imst-json
+
 (To create)
 The spacy convert CLI command has an argument that specifies whether to merge morphological features with the coarse-grained POS tags, 
 to make the fine-grained tags. If this is set differently than the tag_map is expecting, you might see the error you're experiencing.
@@ -62,17 +66,21 @@ py -m spacy debug-data tr imst-json\tr_imst-ud-train.json imst-json\tr_imst-ud-d
 
 ### Train
 
-mkdir tr-models
-py -m spacy train tr tr-models imst-json/tr_imst-ud-train.json imst-json/tr_imst-ud-dev.json
->tag_map i dikkate alarak (tr folder) tarining
-py spacy_tr.py train tr models\model1 imst-json\tr_imst-ud-train.json imst-json\tr_imst-ud-dev.json --pipeline tagger,parser
+mkdir models
 
+py -m spacy train tr models imst-json/tr_imst-ud-train.json imst-json/tr_imst-ud-dev.json
+
+>bunu kullan
+>tag_map i dikkate alarak (tr folder) tarining
+py spacy_tr.py train tr models imst-json\tr_imst-ud-train.json imst-json\tr_imst-ud-dev.json --pipeline tagger,parser
 
 ### Package
 
-py -m spacy package tr-models/model-best tr-models/_x
+mkdir models\_packaged
+py -m spacy package models/model-best models/_packaged
+cd models\_packaged\tr_model0-0.0.0
 python setup.py sdist
-pip install tr-models\_x\tr_model0-0.0.0\dist\tr_model0-0.0.0.tar.gz
+pip install models\_packaged\tr_model0-0.0.0\dist\tr_model0-0.0.0.tar.gz
 
 Train cmd details:
 python -m spacy train [lang] [output_path] [train_path] [dev_path]
@@ -81,3 +89,4 @@ python -m spacy train [lang] [output_path] [train_path] [dev_path]
 [--parser-multitasks] [--entity-multitasks] [--gold-preproc] [--noise-level]
 [--orth-variant-level] [--learn-tokens] [--textcat-arch] [--textcat-multilabel]
 [--textcat-positive-label] [--verbose]
+

@@ -1,11 +1,12 @@
 import spacy
+from spacy.matcher import Matcher
 #from spacy import cli, util
 #from spacy.language import Language
 #from spacy.lang.tr import Turkish, TurkishDefaults
 #from tag_map import TAG_MAP
 
 #nlp = spacy.load("tr-models/model-best")
-nlp = spacy.load("models\model2\model-best")
+nlp = spacy.load("models\model-best")
 #nlp = spacy.load("tr_model0") #packaged model
 
 #nlp = spacy.load('tr-models/model-best', disable=['tagger', 'parser', 'ner']) #to add tagger later
@@ -22,9 +23,26 @@ nlp = spacy.load("models\model2\model-best")
 #     tagger.add_label(tag, values)
 # nlp.add_pipe(tagger)
 
-text = 'Kendileriyle 19. görüştüğümden edindiğim izlenim, "gazeteciye verilen bilgilerle" alakasız bir haberin kere yayımlanmış olduğudur.'
+text0 = 'Kendileriyle 19. görüştüğümden edindiğim izlenim, "gazeteciye verilen bilgilerle" alakasız bir haberin kere yayımlanmış olduğudur.'
 text = "Karşısında, pantolonu dizlerine dek ıslak, önlük torbası ham eriklerle dolu İbrahim dikiliyordu."
-doc = nlp(text)
+text1= "Bu İstanbul'dan bir test cümlesidir. Hayır değildir."
+#doc = nlp(text)
 
-for token in doc:
-	print(f"{token.is_sent_start} - {token.text:{30}} - {token.lemma_:{20}} - {token.pos_:{5}} - {token.tag_:{5}} - {token.dep_:{5}} ")
+# for token in doc:
+# 	print(f"{token.is_sent_start} - {token.text:{30}} - {token.lemma_:{20}} - {token.pos_:{5}} - {token.tag_:{5}} - {token.dep_:{5}} ")
+
+#pipe test:
+batch_array = [(text0, 0), (text, 1), (text1, 2)]
+#docs = list(nlp.pipe(texts))
+for nlp_doc, doc_id in nlp.pipe(batch_array, as_tuples=True, batch_size=2):
+	for token in nlp_doc:
+		print(f"{token.is_sent_start} - {token.text:{30}} - {token.lemma_:{20}} - {token.pos_:{5}} - {token.tag_:{5}} - {token.dep_:{5}} ")
+
+	matcherForW = Matcher(nlp.vocab)
+	matcherForW.add("MoneyW", None, *[
+		[{'POS': 'VERB'}, {'POS': 'NOUN'}]
+	])
+	matches = matcherForW(nlp_doc)	
+	for (match_id, start, end) in matches:
+		print(match_id, start, end, nlp_doc[start:end])
+

@@ -3,15 +3,14 @@
 https://universaldependencies.org/treebanks/tr_imst/index.html
 https://github.com/UniversalDependencies/docs/blob/pages-source/_tr/index.md
 
-http://coltekin.github.io/gk-treebank/
 
+This page describes the annotation of a Turkish “GB” treebank, a treebank of grammar-book examples annotated according to Universal Dependencies (UD) annotation scheme. 
+http://coltekin.github.io/gk-treebank/
 http://coltekin.github.io/gk-treebank/pos/
 Part of speech tags
-
 http://coltekin.github.io/gk-treebank/feat/
 Morphological features
 Animacy, Aspect, Case
-
 http://coltekin.github.io/gk-treebank/dep/
 Dependencies
 
@@ -74,14 +73,6 @@ py -m spacy train tr models imst-json/tr_imst-ud-train.json imst-json/tr_imst-ud
 >tag_map i dikkate alarak (tr folder) tarining
 py spacy_tr.py train tr models imst-json\tr_imst-ud-train.json imst-json\tr_imst-ud-dev.json --pipeline tagger,parser
 
-### Package
-
-mkdir models\_packaged
-py -m spacy package models/model-best models/_packaged
-cd models\_packaged\tr_model0-0.0.0
-python setup.py sdist
-pip install models\_packaged\tr_model0-0.0.0\dist\tr_model0-0.0.0.tar.gz
-
 Train cmd details:
 python -m spacy train [lang] [output_path] [train_path] [dev_path]
 [--base-model] [--pipeline] [--vectors] [--n-iter] [--n-early-stopping]
@@ -90,3 +81,10 @@ python -m spacy train [lang] [output_path] [train_path] [dev_path]
 [--orth-variant-level] [--learn-tokens] [--textcat-arch] [--textcat-multilabel]
 [--textcat-positive-label] [--verbose]
 
+### Package
+
+mkdir models\_packaged
+py -m spacy package models/model-best models/_packaged
+cd models\_packaged\tr_model0-0.0.0
+python setup.py sdist
+pip install models\_packaged\tr_model0-0.0.0\dist\tr_model0-0.0.0.tar.gz

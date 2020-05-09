@@ -1,4 +1,4 @@
-"""A wrapper around spacy cli tools for injecting the extended Finnish data
+"""A wrapper around spacy cli tools for injecting the extended Turkish data
 
 train cli bunun üstünden çalıştırılınca Kendi TurkishDefault modelim çalışacak
 """

@@ -7,7 +7,8 @@ __pycache__/
 *.so
 
 #training generated models
-models
+models/_packaged
+models/model-best
 imst-json
 imst-json-m
 

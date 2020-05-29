@@ -7,10 +7,10 @@ __pycache__/
 *.so
 
 #training generated models
-models/_packaged
-models/model-best
+models/*
 imst-json
 imst-json-m
+vectors/*
 
 # Distribution / packaging
 .Python

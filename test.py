@@ -5,9 +5,8 @@ from spacy.matcher import Matcher
 #from spacy.lang.tr import Turkish, TurkishDefaults
 #from tag_map import TAG_MAP
 
-#nlp = spacy.load("tr-models/model-best")
-nlp = spacy.load("models\model-best")
-#nlp = spacy.load("tr_model0") #packaged model
+#nlp = spacy.load("models/model-cc-md/model-best")
+nlp = spacy.load("tr_model0") #packaged model
 
 #nlp = spacy.load('tr-models/model-best', disable=['tagger', 'parser', 'ner']) #to add tagger later
 #nlp = Language().from_disk('tr-models/model-best')

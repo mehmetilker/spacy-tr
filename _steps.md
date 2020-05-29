@@ -63,6 +63,15 @@ py -m spacy convert UD_Turkish-IMST/tr_imst-ud-train.conllu imst-json-m --morpho
 
 py -m spacy debug-data tr imst-json\tr_imst-ud-train.json imst-json\tr_imst-ud-dev.json
 
+### init-model
+
+Vector modelleri spacy modeline çevirmek
+py -m spacy init-model tr tr_vector_cc2 --vectors-loc .\vectors\cc.tr.300.vec.gz --prune-vectors 10000
+common crawl: cc.tr.300.vec.gz > çok büyük o yüzden prune-vectors
+alternatif wiki: wiki.tr.vec
+py -m spacy init-model tr .\vectors\tr_vectors_conll17-md --vectors-loc .\vectors\CoNLL17-w2vec\modeltest.txt --prune-vectors 100000
+
+
 ### Train
 
 mkdir models
@@ -73,6 +82,8 @@ py -m spacy train tr models imst-json/tr_imst-ud-train.json imst-json/tr_imst-ud
 >tag_map i dikkate alarak (tr folder) tarining
 py spacy_tr.py train tr models imst-json\tr_imst-ud-train.json imst-json\tr_imst-ud-dev.json --pipeline tagger,parser
 
+py spacy_tr.py train tr model-cc imst-json\tr_imst-ud-train.json imst-json\tr_imst-ud-dev.json --vectors vectors/tr_vectors_cc_lg
+
 Train cmd details:
 python -m spacy train [lang] [output_path] [train_path] [dev_path]
 [--base-model] [--pipeline] [--vectors] [--n-iter] [--n-early-stopping]
@@ -81,10 +92,18 @@ python -m spacy train [lang] [output_path] [train_path] [dev_path]
 [--orth-variant-level] [--learn-tokens] [--textcat-arch] [--textcat-multilabel]
 [--textcat-positive-label] [--verbose]
 
+
+### Evaluate
+
+Display training result values
+py -m spacy evaluate .\models\model-cc-md\model-best\ .\imst-json\tr_imst-ud-test.json
+
 ### Package
 
 mkdir models\_packaged
 py -m spacy package models/model-best models/_packaged
+py -m spacy package models/model-cc-md/model-best models/_packaged
+
 cd models\_packaged\tr_model0-0.0.0
 python setup.py sdist
 pip install models\_packaged\tr_model0-0.0.0\dist\tr_model0-0.0.0.tar.gz

@@ -1,4 +1,3 @@
-50K kelime
 (.env) PS C:\Users\imete\spacy-tr> py spacy_tr.py train tr models/model-cc-md imst-json\tr_imst-ud-train.json imst-json\tr_imst-ud-dev.json --vectors .\vectors\tr_vectors_cc-md\
 Training pipeline: ['tagger', 'parser', 'ner']
 Starting with blank model 'tr'

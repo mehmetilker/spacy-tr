@@ -66,7 +66,7 @@ py -m spacy debug-data tr imst-json\tr_imst-ud-train.json imst-json\tr_imst-ud-d
 ### init-model
 
 Vector modelleri spacy modeline çevirmek
-py -m spacy init-model tr tr_vector_cc2 --vectors-loc .\vectors\cc.tr.300.vec.gz --prune-vectors 10000
+py -m spacy init-model tr .\vectors\tr_vectors_cc_50K_2 --vectors-loc .\vectors\_org-files\cc.tr.300.vec.gz --prune-vectors 50000
 common crawl: cc.tr.300.vec.gz > çok büyük o yüzden prune-vectors
 alternatif wiki: wiki.tr.vec
 py -m spacy init-model tr .\vectors\tr_vectors_conll17-md --vectors-loc .\vectors\CoNLL17-w2vec\modeltest.txt --prune-vectors 100000
@@ -82,7 +82,8 @@ py -m spacy train tr models imst-json/tr_imst-ud-train.json imst-json/tr_imst-ud
 >tag_map i dikkate alarak (tr folder) tarining
 py spacy_tr.py train tr models imst-json\tr_imst-ud-train.json imst-json\tr_imst-ud-dev.json --pipeline tagger,parser
 
-py spacy_tr.py train tr model-cc imst-json\tr_imst-ud-train.json imst-json\tr_imst-ud-dev.json --vectors vectors/tr_vectors_cc_lg
+>>>> vector modeli dikkate alarak
+py spacy_tr.py train tr model-cc-50K imst-json\tr_imst-ud-train.json imst-json\tr_imst-ud-dev.json --vectors vectors/tr_vectors_cc_50K_2
 
 Train cmd details:
 python -m spacy train [lang] [output_path] [train_path] [dev_path]

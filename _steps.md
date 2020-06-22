@@ -104,7 +104,9 @@ py -m spacy evaluate .\models\model-cc-md\model-best\ .\imst-json\tr_imst-ud-tes
 mkdir models\_packaged
 py -m spacy package models/model-best models/_packaged
 py -m spacy package models/model-cc-md/model-best models/_packaged
+py -m spacy package models/model-cc-50K_2/model-best models/_packaged
 
 cd models\_packaged\tr_model0-0.0.0
 python setup.py sdist
+
 pip install models\_packaged\tr_model0-0.0.0\dist\tr_model0-0.0.0.tar.gz

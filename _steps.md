@@ -66,7 +66,7 @@ py -m spacy debug-data tr imst-json\tr_imst-ud-train.json imst-json\tr_imst-ud-d
 ### init-model
 
 Vector modelleri spacy modeline çevirmek
-py -m spacy init-model tr .\vectors\tr_vectors_cc_50K_3 --vectors-loc .\vectors\_org-files\cc.tr.300.vec.gz --prune-vectors 50000
+py -m spacy init-model tr .\vectors\tr_vectors_cc_50K_3 --vectors-name tr_cc_md.vectors --vectors-loc .\vectors\_org-files\cc.tr.300.vec.gz --prune-vectors 50000
 common crawl: cc.tr.300.vec.gz > çok büyük o yüzden prune-vectors
 alternatif wiki: wiki.tr.vec
 py -m spacy init-model tr .\vectors\tr_vectors_conll17-md --vectors-loc .\vectors\CoNLL17-w2vec\modeltest.txt --prune-vectors 100000

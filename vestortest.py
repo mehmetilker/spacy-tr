@@ -8,8 +8,8 @@ def vector_convert():
 	#model = Word2Vec.load(r"C:\Users\imete\spacy-tr\vectors\CoNLL17-w2vec\model.bin")
 	#model.wv.save_word2vec_format('modeltest.txt', binary=False)
 
-	wv_from_bin = KeyedVectors.load_word2vec_format(datapath(r"C:\Users\spacy-tr\vectors\_org-files\trmodel"), binary=True)
-	wv_from_bin.wv.save_word2vec_format('trmodel.txt', binary=False)
+	wv_from_bin = KeyedVectors.load_word2vec_format(datapath(r"vectors/_org-files/model.bin"), binary=True)
+	wv_from_bin.wv.save_word2vec_format('model-tr.txt', binary=False)
 
 def vector_test():
 	#nlp = spacy.load("vectors/tr_vectors_cc_sm")

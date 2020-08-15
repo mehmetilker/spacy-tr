@@ -1,10 +1,10 @@
 {
   "lang":"tr",
-  "name":"tr_cc_50K",
+  "name":"cc_50K",
   "version":"0.0.1",
   "spacy_version":">=2.3.0",
-  "description":"Turkish NLP Model with 50K Common Crawl Word Vectors",
-  "author":"Mehmet \u0130lker",
+  "description":"Turkish NLP Model with 20K Common Crawl Word Vectors",
+  "author":"Mehmet Ilker",
   "email":"mehmetilker@outloook.com",
   "url":"https://github.com/mehmetilker/spacy-tr",
   "license":"CC BY-SA 3.0",

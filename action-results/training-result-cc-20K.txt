@@ -1,0 +1,63 @@
+✔ Created output directory: models\model-cc-20K
+Training pipeline: ['tagger', 'parser', 'ner']
+Starting with blank model 'tr'
+Loading vector from model '.\vectors\tr_vectors_cc_20K\'
+Counting training words (limit=0)
+C:\Users\imete\spacy-tr\.env\lib\site-packages\spacy\language.py:635: UserWarning: [W033] Training a new part-of-speech tagger using a model with no lexeme normalization table. This may degrade the performance of the model to some degree. If this is intentional or the language you're using doesn't have a normalization table, please ignore this warning. If this is surprising, make sure you have the spacy-lookups-data package installed. The languages with lexeme normalization tables are currently: da, de, el, en, id, lb, pt, ru, sr, ta, th.
+  proc.begin_training(
+C:\Users\imete\spacy-tr\.env\lib\site-packages\spacy\language.py:635: UserWarning: [W033] Training a new parser or NER using a model with no lexeme normalization table. This may degrade the performance of the model to some degree. If this is intentional or the language you're using doesn't have a normalization table, please ignore this warning. If this is surprising, make sure you have the spacy-lookups-data package installed. The languages with lexeme normalization tables are currently: da, de, el, en, id, lb, pt, ru, sr, ta, th.
+  proc.begin_training(
+
+Itn  Tag Loss    Tag %    Dep Loss    UAS     LAS    NER Loss   NER P   NER R   NER F   Token %  CPU WPS
+---  ---------  --------  ---------  ------  ------  ---------  ------  ------  ------  -------  -------
+  1  12625.554    88.792  49460.629  54.445  33.212      0.000   0.000   0.000   0.000  100.000     4880
+  2   5418.459    91.668  44244.309  61.415  44.448      0.000   0.000   0.000   0.000  100.000     4533
+  3   3884.792    92.534  39558.104  63.228  50.233      0.000   0.000   0.000   0.000  100.000     4731
+  4   2861.232    92.972  36904.921  64.458  52.771      0.000   0.000   0.000   0.000  100.000     5319
+  5   2363.279    93.062  34029.836  65.528  54.162      0.000   0.000   0.000   0.000  100.000     5377
+  6   1917.052    93.002  31882.267  65.754  54.660      0.000   0.000   0.000   0.000  100.000     5411
+  7   1647.859    92.982  30166.425  65.726  55.044      0.000   0.000   0.000   0.000  100.000     5184
+  8   1309.214    93.042  28224.898  65.645  54.914      0.000   0.000   0.000   0.000  100.000     5256
+  9   1163.636    92.873  26477.753  65.827  55.352      0.000   0.000   0.000   0.000  100.000     3694
+ 10   1014.558    93.082  25325.492  66.412  55.767      0.000   0.000   0.000   0.000  100.000     5155
+ 11    931.577    93.161  23772.213  65.976  55.416      0.000   0.000   0.000   0.000  100.000     4935
+ 12    789.919    93.092  22481.153  66.033  55.764      0.000   0.000   0.000   0.000  100.000     5069
+ 13    746.622    93.152  21335.201  65.746  55.562      0.000   0.000   0.000   0.000  100.000     5140
+ 14    646.284    93.152  20387.321  65.787  55.480      0.000   0.000   0.000   0.000  100.000     5098
+ 15    672.478    93.161  19730.916  65.884  55.615      0.000   0.000   0.000   0.000  100.000     4667
+ 16    568.556    93.112  18732.297  66.146  55.675      0.000   0.000   0.000   0.000  100.000     4883
+ 17    548.850    93.142  18073.920  66.235  55.823      0.000   0.000   0.000   0.000  100.000     5073
+ 18    498.249    93.181  17356.326  66.235  55.666      0.000   0.000   0.000   0.000  100.000     4895
+ 19    452.664    93.132  16971.934  66.578  56.071      0.000   0.000   0.000   0.000  100.000     4907
+ 20    448.395    93.082  16150.887  66.275  55.756      0.000   0.000   0.000   0.000  100.000     4835
+ 21    393.066    93.042  15391.063  66.400  55.894      0.000   0.000   0.000   0.000  100.000     4780
+ 22    417.707    93.052  14771.947  66.199  55.680      0.000   0.000   0.000   0.000  100.000     4481
+ 23    351.126    93.082  14408.109  66.239  55.708      0.000   0.000   0.000   0.000  100.000     4844
+ 24    356.556    93.062  14492.190  65.819  55.217      0.000   0.000   0.000   0.000  100.000     4569
+ 25    337.275    93.102  13648.845  65.953  55.338      0.000   0.000   0.000   0.000  100.000     4563
+ 26    311.154    93.181  12937.256  65.844  55.289      0.000   0.000   0.000   0.000  100.000     4586
+ 27    314.017    93.211  13225.243  65.622  55.104      0.000   0.000   0.000   0.000  100.000     4557
+ 28    312.741    93.251  12680.965  65.577  55.108      0.000   0.000   0.000   0.000  100.000     4487
+ 29    321.247    93.191  12471.812  65.553  54.938      0.000   0.000   0.000   0.000  100.000     4607
+ 30    304.528    93.152  11986.008  65.481  54.793      0.000   0.000   0.000   0.000  100.000     4550
+✔ Saved model to output directory
+models\model-cc-20K\model-final
+✔ Created best model
+models\model-cc-20K\model-best
+(.env) PS C:\Users\imete\spacy-tr>
+
+(.env) PS C:\Users\imete\spacy-tr> py -m spacy evaluate .\models\model-cc-20K\model-best\ .\imst-json\tr_imst-ud-test.json
+
+================================== Results ==================================
+
+Time      1.98 s
+Words     10029
+Words/s   5077
+TOK       100.00
+POS       93.37
+UAS       66.61
+LAS       56.34
+NER P     0.00
+NER R     0.00
+NER F     0.00
+Textcat   0.00

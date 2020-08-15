@@ -1,8 +1,8 @@
 {
   "lang": "tr",
-  "name": "tr_cc_50K",
+  "name": "cc_20K",
   "spacy_version": ">=2.3.0,<3.0.0",
-  "version": "0.0.1",
+  "version": "0.0.4",
   "description": "Turkish NLP Model with 50K Common Crawl Word Vectors",
   "author": "Mehmet İlker",
   "email": "mehmetilker@outloook.com",

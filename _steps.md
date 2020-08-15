@@ -84,7 +84,7 @@ py -m spacy train tr models imst-json/tr_imst-ud-train.json imst-json/tr_imst-ud
 py spacy_tr.py train tr models imst-json\tr_imst-ud-train.json imst-json\tr_imst-ud-dev.json --pipeline tagger,parser
 
 >>>> vector modeli dikkate alarak
-py spacy_tr.py train tr models\model-cc-50K imst-json\tr_imst-ud-train.json imst-json\tr_imst-ud-dev.json --vectors vectors/tr_vectors_cc_50K_3
+py spacy_tr.py train tr models\model-cc-50K imst-json\tr_imst-ud-train.json imst-json\tr_imst-ud-dev.json --vectors vectors/tr_vectors_cc_50K_3 --meta-path meta.json
 
 Train cmd details:
 python -m spacy train [lang] [output_path] [train_path] [dev_path]
